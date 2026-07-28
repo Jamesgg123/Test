@@ -1,0 +1,40 @@
+html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>提交結果</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+        .success-box { background-color: #d4edda; border: 1px solid #c3e6cb; padding: 20px; border-radius: 4px; }
+        .info { margin: 10px 0; }
+        .label { font-weight: bold; display: inline-block; width: 100px; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h2>資料提交成功！</h2>
+        <p>您剛才輸入的資料如下：</p>
+        <hr>
+        <div class="info">
+            <span class="label">會員編號：</span>
+            <span th:text="${savedUser.id}">ID</span>
+        </div>
+        <div class="info">
+            <span class="label">使用者姓名：</span>
+            <span th:text="${savedUser.name}">Name</span>
+        </div>
+        <div class="info">
+            <span class="label">電子郵件：</span>
+            <span th:text="${savedUser.email}">Email</span>
+        </div>
+    </div>
+    
+    <br>
+    <a th:href="@{/user/form}">返回重新填寫</a>
+    &nbsp;|&nbsp;
+    <a th:href="@{/welcome}">回首頁</a>
+</body>
+</html>

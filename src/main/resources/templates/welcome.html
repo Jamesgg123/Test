@@ -1,0 +1,20 @@
+html
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    
+    <title th:text="${title}">靜態標題（預覽用）</title>
+</head>
+<body>
+    <h1 th:text="${title}">原本的靜態大標題</h1>
+    
+    <p th:text="${message}">這裡原本是靜態網頁內文，後端動態渲染後會被覆蓋。</p>
+    
+    <p>伺服器當前時間：<span th:text="${currentTime}">顯示時間</span></p>
+    
+    <hr>
+    <a th:href="@{/user/form}">前往會員註冊表單</a>
+</body>
+</html>
